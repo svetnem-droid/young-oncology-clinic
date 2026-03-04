@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>מרפאת צעירים – מידע ותמיכה</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="logo-dot"></span>
+        מרפאת צעירים
+      </div>
+      <div class="nav-links">
+        <a href="#" onclick="showPage('home')" class="nav-link">בית</a>
+        <a href="#" onclick="showPage('stages')" class="nav-link">שלבי המחלה</a>
+        <a href="#" onclick="showPage('services')" class="nav-link">שירותי המרפאה</a>
+        <a href="#" onclick="showPage('community')" class="nav-link">קהילה</a>
+        <a href="#" onclick="showPage('contact')" class="nav-link nav-cta">צרי קשר</a>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#" onclick="showPage('home'); toggleMenu()">בית</a>
+      <a href="#" onclick="showPage('stages'); toggleMenu()">שלבי המחלה</a>
+      <a href="#" onclick="showPage('services'); toggleMenu()">שירותי המרפאה</a>
+      <a href="#" onclick="showPage('community'); toggleMenu()">קהילה</a>
+      <a href="#" onclick="showPage('contact'); toggleMenu()">צרי קשר</a>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE: HOME ===== -->
+  <div class="page active" id="page-home">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content">
+        <div class="hero-badge">מרפאת צעירים | אונקולוגיה</div>
+        <h1 class="hero-title">
+          המידע הנכון,<br />
+          <span class="gradient-text">ברגע הנכון</span>
+        </h1>
+        <p class="hero-sub">
+          מרכז מידע מותאם אישית למטופלים צעירים —<br />
+          לפי שלב המחלה, סוג האבחנה, והצרכים שלך.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="showPage('onboarding')">מצאי את המידע שלי</button>
+          <button class="btn-ghost" onclick="showPage('stages')">סקירת כל הנושאים</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+      </div>
+    </section>
+
+    <!-- Quick Topics -->
+    <section class="section">
+      <div class="container">
+        <div class="section-label">נושאים מרכזיים</div>
+        <h2 class="section-title">כל מה שחשוב לדעת</h2>
+        <div class="topics-grid">
+          <div class="topic-card" onclick="showStage('new')">
+            <div class="topic-icon" style="background: var(--teal-light);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+              </svg>
+            </div>
+            <h3>אבחנה חדשה</h3>
+            <p>הצעדים הראשונים, שאלות לרופא, ומה חשוב לדעת בתחילת הדרך</p>
+            <span class="card-arrow">←</span>
+          </div>
+          <div class="topic-card" onclick="showStage('treatment')">
+            <div class="topic-icon" style="background: var(--purple-light);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M3 12h4l3-9 4 18 3-9h4"/>
+              </svg>
+            </div>
+            <h3>במהלך הטיפולים</h3>
+            <p>תופעות לוואי, אסטרטגיות התמודדות, ומה לשים לב אליו</p>
+            <span class="card-arrow">←</span>
+          </div>
+          <div class="topic-card" onclick="showStage('recovery')">
+            <div class="topic-icon" style="background: var(--coral-light);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <h3>לקראת החלמה</h3>
+            <p>שיקום, חזרה לשגרה, וכלים לפרק ההחלמה</p>
+            <span class="card-arrow">←</span>
+          </div>
+          <div class="topic-card" onclick="showPage('youngTopics')">
+            <div class="topic-icon" style="background: var(--green-light);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <h3>נושאים למטופלים צעירים</h3>
+            <p>פוריות, מיניות, גיל מעבר מוקדם ושיקום קוגניטיבי</p>
+            <span class="card-arrow">←</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Strip -->
+    <section class="strip">
+      <div class="container">
+        <div class="strip-inner">
+          <div class="strip-text">
+            <h2>שירותי המרפאה זמינים עבורך</h2>
+            <p>אחות מרפאת צעירים, ייעוץ מינייות, מומחית גיל מעבר, רפואה משלימה ועוד</p>
+            <button class="btn-primary" onclick="showPage('services')">לכל השירותים</button>
+          </div>
+          <div class="strip-cards">
+            <div class="mini-card"><span>👩‍⚕️</span> אחות מרפאת</div>
+            <div class="mini-card"><span>🌿</span> רפואה משלימה</div>
+            <div class="mini-card"><span>🫀</span> ייעוץ מינייות</div>
+            <div class="mini-card"><span>✨</span> תוכנית מחלימה</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community -->
+    <section class="section bg-light">
+      <div class="container">
+        <div class="section-label">קהילה</div>
+        <h2 class="section-title">לא עוברים את זה לבד</h2>
+        <div class="community-grid">
+          <div class="comm-card" onclick="showPage('community')">
+            <div class="comm-icon">🎥</div>
+            <h4>קהילת זום שבועית</h4>
+            <p>מפגש מטופלים אחת לשבוע בזום</p>
+          </div>
+          <div class="comm-card" onclick="showPage('community')">
+            <div class="comm-icon">🧘</div>
+            <h4>קבוצת מיינדפולנס</h4>
+            <p>כלים להפחתת מתח ולחץ</p>
+          </div>
+          <div class="comm-card" onclick="showPage('community')">
+            <div class="comm-icon">🎨</div>
+            <h4>אומנות וכתיבה יוצרת</h4>
+            <p>ביטוי עצמי דרך יצירה</p>
+          </div>
+          <div class="comm-card" onclick="showPage('community')">
+            <div class="comm-icon">🤝</div>
+            <h4>קבוצות תמיכה</h4>
+            <p>שיח עם אנשים שמבינים</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <h2>יש לך שאלה? אנחנו כאן</h2>
+          <p>פנייה ישירה לאחות מרפאת הצעירים דרך וואטסאפ</p>
+          <button class="btn-whatsapp" onclick="showPage('contact')">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            פנייה בוואטסאפ
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ===== PAGE: ONBOARDING ===== -->
+  <div class="page" id="page-onboarding">
+    <section class="section onboarding-section">
+      <div class="container onboarding-container">
+        <button class="back-btn" onclick="showPage('home')">← חזרה</button>
+        <div class="onboard-step" id="step-1">
+          <div class="section-label">שלב 1 מתוך 3</div>
+          <h2 class="section-title">איפה את/ה בדרך?</h2>
+          <div class="onboard-options">
+            <div class="onboard-option" onclick="selectStage('new'); nextStep(2)">
+              <div class="option-icon">🔍</div>
+              <h3>אבחנה חדשה</h3>
+              <p>רק קיבלתי את האבחנה</p>
+            </div>
+            <div class="onboard-option" onclick="selectStage('treatment'); nextStep(2)">
+              <div class="option-icon">💊</div>
+              <h3>במהלך הטיפולים</h3>
+              <p>כרגע עובר/ת טיפולים</p>
+            </div>
+            <div class="onboard-option" onclick="selectStage('recovery'); nextStep(2)">
+              <div class="option-icon">🌱</div>
+              <h3>לקראת החלמה</h3>
+              <p>סיימתי טיפולים ובתהליך החלמה</p>
+            </div>
+          </div>
+        </div>
+        <div class="onboard-step hidden" id="step-2">
+          <div class="section-label">שלב 2 מתוך 3</div>
+          <h2 class="section-title">מה סוג האבחנה?</h2>
+          <div class="onboard-options">
+            <div class="onboard-option" onclick="selectDiagnosis('breast'); nextStep(3)">
+              <div class="option-icon">🩷</div>
+              <h3>סרטן השד</h3>
+            </div>
+            <div class="onboard-option" onclick="selectDiagnosis('colon'); nextStep(3)">
+              <div class="option-icon">🫁</div>
+              <h3>סרטן המעי</h3>
+            </div>
+            <div class="onboard-option" onclick="selectDiagnosis('other'); nextStep(3)">
+              <div class="option-icon">⚕️</div>
+              <h3>אחר</h3>
+            </div>
+          </div>
+        </div>
+        <div class="onboard-step hidden" id="step-3">
+          <div class="section-label">שלב 3 מתוך 3</div>
+          <h2 class="section-title">מה הכי חשוב לך כרגע?</h2>
+          <div class="onboard-options onboard-options-4">
+            <div class="onboard-option" onclick="selectNeed('fertility')">
+              <div class="option-icon">🌸</div>
+              <h3>שימור פוריות</h3>
+            </div>
+            <div class="onboard-option" onclick="selectNeed('sexuality')">
+              <div class="option-icon">💜</div>
+              <h3>מיניות ותפקוד</h3>
+            </div>
+            <div class="onboard-option" onclick="selectNeed('cognitive')">
+              <div class="option-icon">🧠</div>
+              <h3>זיכרון וריכוז</h3>
+            </div>
+            <div class="onboard-option" onclick="selectNeed('community')">
+              <div class="option-icon">🤝</div>
+              <h3>קהילה ותמיכה</h3>
+            </div>
+          </div>
+          <button class="btn-primary mt-2" onclick="showPersonalized()">הצגת המידע שלי</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== PAGE: STAGES ===== -->
+  <div class="page" id="page-stages">
+    <section class="page-hero page-hero-teal">
+      <div class="container">
+        <button class="back-btn light" onclick="showPage('home')">← חזרה</button>
+        <h1>מידע לפי שלב המחלה</h1>
+        <p>בחרי את השלב הרלוונטי עבורך</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="stage-tabs">
+          <button class="stage-tab active" onclick="showStageTab('new', this)">אבחנה חדשה</button>
+          <button class="stage-tab" onclick="showStageTab('treatment', this)">במהלך הטיפולים</button>
+          <button class="stage-tab" onclick="showStageTab('recovery', this)">לקראת החלמה</button>
+        </div>
+
+        <!-- New Diagnosis -->
+        <div class="stage-content active" id="stage-new">
+          <div class="info-grid">
+            <div class="info-card">
+              <div class="info-card-header teal">מה חשוב לדעת בתחילת הדרך</div>
+              <div class="info-card-body">
+                <ul>
+                  <li>יש זמן לקבל חוות דעת שנייה — אל תמהרי להחליט</li>
+                  <li>הביאי מישהו קרוב לפגישות עם הרופא</li>
+                  <li>מותר לא לדעת הכול מיד</li>
+                  <li>רשמי את כל השאלות שעולות לך</li>
+                  <li>בקשי מהצוות הסבר בשפה פשוטה</li>
+                </ul>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-header purple">שאלות לשאול את הרופא</div>
+              <div class="info-card-body">
+                <ul>
+                  <li>מה בדיוק האבחנה ומה השלב?</li>
+                  <li>מה אפשרויות הטיפול ומה ההמלצה?</li>
+                  <li>מה תופעות הלוואי הצפויות?</li>
+                  <li>האם יש השלכות על פוריות ומה האפשרויות?</li>
+                  <li>מתי מתחילים ומה ציר הזמן?</li>
+                  <li>למי פונה במקרה חירום?</li>
+                </ul>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-header coral">הצעדים הראשונים לאחר האבחנה</div>
+              <div class="info-card-body">
+                <ol>
+                  <li>קביעת פגישה עם אחות מרפאת הצעירים</li>
+                  <li>בדיקת אפשרויות שימור פוריות לפני תחילת טיפול</li>
+                  <li>הסדרת ביטוחים ורצף תעסוקתי</li>
+                  <li>יצירת רשת תמיכה — משפחה וחברים</li>
+                  <li>הצטרפות לקהילת המטופלים</li>
+                </ol>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-header green">מידע לפי סוג האבחנה</div>
+              <div class="info-card-body">
+                <div class="diag-btn-group">
+                  <button class="diag-btn" onclick="showDiag('breast')">🩷 סרטן השד</button>
+                  <button class="diag-btn" onclick="showDiag('colon')">🫁 סרטן המעי</button>
+                </div>
+                <div class="diag-content hidden" id="diag-breast">
+                  <strong>סרטן השד:</strong>
+                  <ul>
+                    <li>לימפאדמה — מה היא וכיצד למנוע</li>
+                    <li>שימור פוריות לפני כימותרפיה</li>
+                    <li>שינויים בדימוי הגוף — תמיכה ומשאבים</li>
+                  </ul>
+                </div>
+                <div class="diag-content hidden" id="diag-colon">
+                  <strong>סרטן המעי:</strong>
+                  <ul>
+                    <li>סטומה — מידע, הסתגלות וחיים מלאים</li>
+                    <li>פיזיותרפיה לרצפת אגן</li>
+                    <li>תזונה מותאמת לאחר הניתוח</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Treatment -->
+        <div class="stage-content" id="stage-treatment">
+          <div class="info-grid">
+            <div class="info-card">
+              <div class="info-card-header teal">תופעות לוואי נפוצות</div>
+              <div class="info-card-body">
+                <ul>
+                  <li><strong>עייפות:</strong> מנוחה מתוכננת, פעילות מתונה</li>
+                  <li><strong>בחילות:</strong> ארוחות קטנות ותכופות, הימנעות מריחות חזקים</li>
+                  <li><strong>נשירת שיער:</strong> הכנה מנטלית, פאות ועזרים</li>
+                  <li><strong>שינויים בדם:</strong> מעקב סדיר, הימנעות מהמון</li>
+                  <li><strong>כאבים:</strong> לדווח לצוות — אל לסבול בשקט</li>
+                </ul>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-header purple">למה לשים לב</div>
+              <div class="info-card-body">
+                <div class="alert-item red">חום מעל 38° — פנייה מיידית לצוות</div>
+                <div class="alert-item red">קצב לב מהיר, קשיי נשימה — פנייה לחדר מיון</div>
+                <div class="alert-item yellow">שינוי פתאומי בתפקוד — עדכון הצוות</div>
+                <div class="alert-item yellow">כאב חזק שלא נשלט בתרופות</div>
+                <div class="alert-item green">שמרי על תיעוד של תסמינים יומיים</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-header coral">אסטרטגיות להתמודדות</div>
+              <div class="info-card-body">
+                <ul>
+                  <li>שגרה יומית ולו קטנה — מייצבת</li>
+                  <li>שיח פתוח עם הסביבה על הצרכים שלך</li>
+                  <li>אל תוותרי על דברים שמשמחים אותך</li>
+                  <li>קהילת הזום השבועית — שמעי מניסיון של אחרות</li>
+                  <li>קבוצת מיינדפולנס לניהול חרדה ומתח</li>
+                  <li>מותר לבקש עזרה</li>
+                </ul>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-header green">שיקום קוגניטיבי — "Brain Fog"</div>
+              <div class="info-card-body">
+                <p class="info-note">קשיים בריכוז וזיכרון במהלך הטיפולים הם תופעה נפוצה ומוכרת.</p>
+                <ul>
+                  <li>רשמי רשימות ותזכורות</li>
+                  <li>חלקי משימות לחלקים קטנים</li>
+                  <li>הגבלת גירויים ומולטי-טאסקינג</li>
+                  <li>שינה מספקת — בסיס לתפקוד</li>
+                  <li>פנייה לייעוץ נוירו-קוגניטיבי אם נדרש</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recovery -->
+        <div class="stage-content" id="stage-recovery">
+          <div class="info-grid">
+            <div class="info-card">
+              <div class="info-card-header teal">תוכנית שיקום</div>
+              <div class="info-card-body">
+                <p class="info-note">ההחלמה לוקחת זמן — ועוד זה בסדר.</p>
+                <ul>
+                  <li>בדיקות מעקב תקופתיות עם הצוות</li>
+                  <li>פיזיותרפיה מותאמת לשיקום גופני</li>
+                  <li>תוכנית מחלימה מלווה של המרפאה</li>
+                  <li>ייעוץ תזונתי לחידוש כוחות</li>
+                  <li>חידוש פעילות גופנית בהדרגה</li>
+                </ul>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-header purple">חזרה הדרגתית לשגרה</div>
+              <div class="info-card-body">
+                <ul>
+                  <li>חזרה לעבודה — בשלבים, בתיאום עם המעסיק</li>
+                  <li>זכויות עובד לאחר מחלה — מומלץ להתייעץ</li>
+                  <li>שיח עם הסביבה הקרובה על הצרכים שהשתנו</li>
+                  <li>מותר שדברים יהיו שונים מאיך שהיו</li>
+                  <li>קבלת עזרה פסיכולוגית אם מתקשים</li>
+                </ul>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-header coral">שיקום גופני</div>
+              <div class="info-card-body">
+                <ul>
+                  <li>הליכה יומית — התחלה מ-10 דקות</li>
+                  <li>עבודה עם פיזיותרפיסט מוסמך</li>
+                  <li>יוגה ופילאטיס — מתאימים לאחר טיפולים</li>
+                  <li>בריכה — שיקום עדין ומאזן</li>
+                  <li>הקשבה לגוף — עצרי כשכואב</li>
+                </ul>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-header green">שיקום קוגניטיבי</div>
+              <div class="info-card-body">
+                <ul>
+                  <li>תרגילי זיכרון וריכוז — אפליקציות ייעודיות</li>
+                  <li>קריאה והשתתפות בפעילויות מגרות</li>
+                  <li>שגרה קבועה — מייצבת את המוח</li>
+                  <li>הפחתת מתח דרך מיינדפולנס</li>
+                  <li>שיקום קוגניטיבי מקצועי — זמין במרפאה</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== PAGE: YOUNG TOPICS ===== -->
+  <div class="page" id="page-youngTopics">
+    <section class="page-hero page-hero-purple">
+      <div class="container">
+        <button class="back-btn light" onclick="showPage('home')">← חזרה</button>
+        <h1>נושאים ייחודיים למטופלים צעירים</h1>
+        <p>המידע הנכון לגיל שלך ולצרכים הספציפיים שלך</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="accordion-list">
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span>🌸 שימור פוריות</span>
+              <span class="accordion-arrow">↓</span>
+            </div>
+            <div class="accordion-body">
+              <p>שימור פוריות הוא נושא קריטי לפני תחילת טיפולים כימותרפיים או הקרנות. חשוב לשוחח עם הצוות עוד לפני תחילת הטיפול.</p>
+              <ul>
+                <li>הקפאת ביציות — האפשרות הנפוצה ביותר</li>
+                <li>הקפאת עוברים — למי שיש בן/בת זוג</li>
+                <li>הקפאת רקמת שחלה — אפשרות בשלבים מסוימים</li>
+                <li>התייעצות עם מומחה פוריות — מומלץ לפני כל טיפול</li>
+                <li>הכיסוי הביטוחי — בדקי את זכויותיך</li>
+              </ul>
+              <div class="topic-cta">
+                <button class="btn-small" onclick="showPage('services')">לפגישה עם אחות מרפאת צעירים</button>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span>💜 מיניות ותפקוד מיני</span>
+              <span class="accordion-arrow">↓</span>
+            </div>
+            <div class="accordion-body">
+              <p>טיפולים אונקולוגיים עשויים להשפיע על התפקוד המיני — זהו נושא לגיטימי ומוכר שחשוב לדבר עליו.</p>
+              <ul>
+                <li>שינויים בחשק המיני — תופעה שכיחה</li>
+                <li>יובש בנרתיק וכאב — טיפולים זמינים</li>
+                <li>שינויים בדימוי גוף ובביטחון העצמי</li>
+                <li>שיח פתוח עם בן/בת הזוג — חשוב ומאחד</li>
+                <li>ייעוץ עם מטפלת מינית — שירות זמין במרפאה</li>
+              </ul>
+              <div class="topic-cta">
+                <button class="btn-small" onclick="showPage('services')">לייעוץ עם מטפלת מינית</button>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span>🌡️ תסמיני גיל מעבר מוקדם</span>
+              <span class="accordion-arrow">↓</span>
+            </div>
+            <div class="accordion-body">
+              <p>חלק מהטיפולים עשויים לגרום לגיל מעבר מוקדם — גם בנשים צעירות. הסימפטומים ניתנים לטיפול.</p>
+              <ul>
+                <li>גלי חום — ניהול ושיטות הקלה</li>
+                <li>שינויים במצב הרוח — מעקב ותמיכה</li>
+                <li>קשיי שינה — עצות פרקטיות</li>
+                <li>שינויים בצפיפות עצם — מעקב ומניעה</li>
+                <li>טיפול הורמונלי — שיח עם הרופא</li>
+              </ul>
+              <div class="topic-cta">
+                <button class="btn-small" onclick="showPage('services')">לפגישה עם מומחית גיל מעבר</button>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span>🧠 שינויים בזיכרון ובריכוז</span>
+              <span class="accordion-arrow">↓</span>
+            </div>
+            <div class="accordion-body">
+              <p>"כימו-מוח" (Chemo Brain) — קשיים קוגניטיביים בזמן ואחרי טיפולים. תופעה מוכרת שניתן להתמודד איתה.</p>
+              <ul>
+                <li>קשיי ריכוז — נורמלי ולא מעיד על נזק קבוע</li>
+                <li>שכחנות — כלים ואסטרטגיות פרקטיות</li>
+                <li>עיבוד אינפורמציה איטי יותר — תכנון מותאם</li>
+                <li>תרגול קוגניטיבי — שיטות ואפליקציות</li>
+                <li>שיקום נוירו-קוגניטיבי — זמין על פי הצורך</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span>🩷 לימפאדמה — סרטן השד</span>
+              <span class="accordion-arrow">↓</span>
+            </div>
+            <div class="accordion-body">
+              <p>לימפאדמה היא נפיחות הנגרמת מנזק למערכת הלימפה — ניתן למנוע ולטפל.</p>
+              <ul>
+                <li>סימנים מוקדמים — כובד ביד, נפיחות</li>
+                <li>מניעה — תרגילים ועיסוי עצמי</li>
+                <li>לבוש לחץ — מדידה מקצועית</li>
+                <li>לימפודרין — טיפול מקצועי</li>
+                <li>הימנעות מחום, עומס וחבלה ביד</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span>🫁 סטומה — סרטן המעי</span>
+              <span class="accordion-arrow">↓</span>
+            </div>
+            <div class="accordion-body">
+              <p>חיים עם סטומה — הסתגלות, למידה וחיים מלאים ואיכותיים.</p>
+              <ul>
+                <li>הכרת ציוד הסטומה והחלפה נכונה</li>
+                <li>תזונה מותאמת</li>
+                <li>שחייה וספורט עם סטומה — אפשרי!</li>
+                <li>חיי מין עם סטומה — שיח פתוח</li>
+                <li>פיזיותרפיה לרצפת האגן</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== PAGE: SERVICES ===== -->
+  <div class="page" id="page-services">
+    <section class="page-hero page-hero-coral">
+      <div class="container">
+        <button class="back-btn light" onclick="showPage('home')">← חזרה</button>
+        <h1>שירותי המרפאה</h1>
+        <p>הצוות שלנו כאן עבורך — בכל שלב ובכל צורך</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3>אחות מרפאת צעירים</h3>
+            <p>הנקודה הראשונה לפנייה. האחות מלווה את המטופל לאורך כל הדרך, עונה על שאלות, ומחברת לשירותים הנדרשים.</p>
+            <div class="service-tags">
+              <span class="tag">ליווי אישי</span>
+              <span class="tag">תיאום טיפול</span>
+              <span class="tag">מידע</span>
+            </div>
+            <button class="btn-service" onclick="showPage('contact')">לפגישה</button>
+          </div>
+          <div class="service-card">
+            <div class="service-icon purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3>ייעוץ עם מטפלת מינית</h3>
+            <p>טיפולים אונקולוגיים משפיעים על התפקוד המיני. המטפלת המינית מסייעת בהתמודדות עם שינויים אלה בסביבה בטוחה ולא שיפוטית.</p>
+            <div class="service-tags">
+              <span class="tag">פרטיות מלאה</span>
+              <span class="tag">זוגות ויחידים</span>
+            </div>
+            <button class="btn-service" onclick="showPage('contact')">לקביעת פגישה</button>
+          </div>
+          <div class="service-card">
+            <div class="service-icon coral">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h3>מומחית לתסמיני גיל מעבר</h3>
+            <p>מתמחה בתסמיני גיל מעבר מוקדם הנגרם כתוצאה מטיפולים — גלי חום, שינויים הורמונליים וטיפולים מותאמים.</p>
+            <div class="service-tags">
+              <span class="tag">תסמיני גיל מעבר</span>
+              <span class="tag">טיפול הורמונלי</span>
+            </div>
+            <button class="btn-service" onclick="showPage('contact')">לקביעת פגישה</button>
+          </div>
+          <div class="service-card">
+            <div class="service-icon green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3>רפואה משלימה</h3>
+            <p>שילוב טיפולים משלימים — דיקור, רפלקסולוגיה, ועיסוי טיפולי — להפחתת תופעות לוואי ושיפור איכות החיים.</p>
+            <div class="service-tags">
+              <span class="tag">דיקור</span>
+              <span class="tag">רפלקסולוגיה</span>
+              <span class="tag">עיסוי</span>
+            </div>
+            <button class="btn-service" onclick="showPage('contact')">לתיאום</button>
+          </div>
+          <div class="service-card service-card-wide">
+            <div class="service-icon teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3>תוכנית מחלימה מלווה</h3>
+            <p>תוכנית מובנית לתקופת ההחלמה — מותאמת אישית, הכוללת שיקום גופני, קוגניטיבי ורגשי. ליווי מקצועי לאורך כל הדרך חזרה לשגרה.</p>
+            <div class="service-tags">
+              <span class="tag">שיקום גופני</span>
+              <span class="tag">שיקום קוגניטיבי</span>
+              <span class="tag">תמיכה רגשית</span>
+              <span class="tag">ליווי אישי</span>
+            </div>
+            <button class="btn-service" onclick="showPage('contact')">לפרטים נוספים</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== PAGE: COMMUNITY ===== -->
+  <div class="page" id="page-community">
+    <section class="page-hero page-hero-green">
+      <div class="container">
+        <button class="back-btn light" onclick="showPage('home')">← חזרה</button>
+        <h1>קהילה ותמיכה</h1>
+        <p>לא עוברים את זה לבד — הקהילה שלנו כאן בשבילך</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="community-detail-grid">
+          <div class="comm-detail-card">
+            <div class="comm-detail-header">
+              <span class="comm-emoji">🎥</span>
+              <div>
+                <h3>קהילת מטופלים בזום</h3>
+                <span class="comm-freq">אחת לשבוע</span>
+              </div>
+            </div>
+            <p>מפגש שבועי בזום עם מטופלים ומחלימים. מקום לשתף, להקשיב ולקבל כוח ממי שמבין מהניסיון שלו.</p>
+            <ul>
+              <li>קבוצה פתוחה ומזמינה</li>
+              <li>נוכחות צוות מקצועי</li>
+              <li>פגישות בין 45-60 דקות</li>
+              <li>אין חובה להפעיל מצלמה</li>
+            </ul>
+            <button class="btn-service" onclick="showPage('contact')">לפרטי ההצטרפות</button>
+          </div>
+          <div class="comm-detail-card">
+            <div class="comm-detail-header">
+              <span class="comm-emoji">🧘</span>
+              <div>
+                <h3>קבוצת מיינדפולנס</h3>
+                <span class="comm-freq">מפגשים שבועיים</span>
+              </div>
+            </div>
+            <p>כלים מעשיים להפחתת חרדה, ניהול כאב ומתח. המיינדפולנס הוכח מחקרית כמסייע לאיכות חיים בזמן טיפול ואחריו.</p>
+            <ul>
+              <li>מדיטציה מודרכת</li>
+              <li>נשימות והרפיה</li>
+              <li>כלים ליומיום</li>
+              <li>מתאים לכל רמה</li>
+            </ul>
+            <button class="btn-service" onclick="showPage('contact')">לפרטים</button>
+          </div>
+          <div class="comm-detail-card">
+            <div class="comm-detail-header">
+              <span class="comm-emoji">🎨</span>
+              <div>
+                <h3>אומנות וכתיבה יוצרת</h3>
+                <span class="comm-freq">סדנאות חודשיות</span>
+              </div>
+            </div>
+            <p>ביטוי עצמי דרך יצירה — ציור, קולאז', כתיבה ועוד. מחקרים מראים שיצירה תורמת לעיבוד רגשי ולהחלמה.</p>
+            <ul>
+              <li>אין צורך בניסיון קודם</li>
+              <li>סביבה לא שיפוטית</li>
+              <li>חיבור לקהילה דרך יצירה</li>
+              <li>חומרים מסופקים</li>
+            </ul>
+            <button class="btn-service" onclick="showPage('contact')">לפרטים</button>
+          </div>
+          <div class="comm-detail-card">
+            <div class="comm-detail-header">
+              <span class="comm-emoji">🤝</span>
+              <div>
+                <h3>קבוצות תמיכה למטופלים</h3>
+                <span class="comm-freq">לפי אבחנה ושלב</span>
+              </div>
+            </div>
+            <p>קבוצות קטנות ואינטימיות לפי סוג האבחנה ושלב המחלה. מלווה על ידי מנחה מקצועי.</p>
+            <ul>
+              <li>קבוצה לסרטן השד</li>
+              <li>קבוצה לסרטן המעי</li>
+              <li>קבוצה למחלימים</li>
+              <li>קבוצה לבני ובנות זוג</li>
+            </ul>
+            <button class="btn-service" onclick="showPage('contact')">לפרטים</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== PAGE: CONTACT ===== -->
+  <div class="page" id="page-contact">
+    <section class="page-hero page-hero-teal">
+      <div class="container">
+        <button class="back-btn light" onclick="showPage('home')">← חזרה</button>
+        <h1>צרי קשר</h1>
+        <p>אנחנו כאן בשבילך — בחרי את הדרך הנוחה לך</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container contact-container">
+        <div class="contact-main">
+          <div class="contact-card whatsapp-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="wa-icon"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <h3>וואטסאפ — אחות מרפאת</h3>
+            <p>הדרך המהירה ביותר לפנייה ישירה לאחות מרפאת הצעירים. תגובה בשעות הפעילות.</p>
+            <a class="btn-whatsapp large" href="https://wa.me/972000000000" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              שלחי הודעה
+            </a>
+            <p class="contact-note">שעות פעילות: א׳-ה׳ 08:00–16:00</p>
+          </div>
+          <div class="contact-card form-card">
+            <h3>השאירי פרטים ונחזור אליך</h3>
+            <form class="contact-form" onsubmit="submitForm(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>שם מלא</label>
+                  <input type="text" placeholder="שמך" required />
+                </div>
+                <div class="form-group">
+                  <label>טלפון</label>
+                  <input type="tel" placeholder="050-0000000" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>נושא הפנייה</label>
+                <select>
+                  <option value="">בחרי נושא</option>
+                  <option>פגישה עם אחות מרפאת</option>
+                  <option>ייעוץ מיניות</option>
+                  <option>מומחית גיל מעבר</option>
+                  <option>רפואה משלימה</option>
+                  <option>תוכנית מחלימה</option>
+                  <option>קהילה וקבוצות</option>
+                  <option>אחר</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>הודעה (אופציונלי)</label>
+                <textarea rows="3" placeholder="ספרי לנו במה נוכל לעזור..."></textarea>
+              </div>
+              <button type="submit" class="btn-primary w-full">שלחי פנייה</button>
+            </form>
+            <div class="form-success hidden" id="formSuccess">
+              <div class="success-icon">✓</div>
+              <h4>הפנייה נשלחה!</h4>
+              <p>ניצור איתך קשר בהקדם האפשרי.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="logo-dot"></span>
+        מרפאת צעירים
+      </div>
+      <div class="footer-links">
+        <a href="#" onclick="showPage('stages')">שלבי המחלה</a>
+        <a href="#" onclick="showPage('youngTopics')">נושאים למטופלים צעירים</a>
+        <a href="#" onclick="showPage('services')">שירותי המרפאה</a>
+        <a href="#" onclick="showPage('community')">קהילה</a>
+        <a href="#" onclick="showPage('contact')">צרי קשר</a>
+      </div>
+      <p class="footer-note">המידע באתר זה הוא כללי בלבד ואינו מהווה תחליף לייעוץ רפואי מקצועי.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
